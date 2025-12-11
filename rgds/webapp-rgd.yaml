@@ -23,6 +23,11 @@ spec:
 
       namespace: string | default="default"
 
+    status:
+      # Fields the controller will inject into instances status.
+      deploymentConditions: ${deployment.status.conditions}
+      availableReplicas: ${deployment.status.availableReplicas}
+
   resources:
     - id: namespace
       template:
